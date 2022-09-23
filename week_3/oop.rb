@@ -14,9 +14,11 @@ class Grade
         @chemistry = chemistry
         @avg = average
     end
+
     def average
         avg = ((@math+@physical+@chemistry).to_f/3).round(2)
     end
+
     def show_grade
         puts "math is #{@math}"
         puts "physical is #{@physical}"
@@ -55,6 +57,7 @@ end
 
 class Student < Human
     attr_accessor :school, :student_id, :class, :grade
+    
     def initialize(name, gender, hair, height, weight, age, phone, email, nation, school, student_id, class_, math, physical, chemistry)
         super(name, gender, hair, height, weight, age, phone, email, nation)
         @school = school
@@ -81,7 +84,12 @@ st << st1
 st << st2
 st << st3
 st << st4
-st = st.sort_by{|s| [s.grade.avg]}
+puts "List student before sort: "
 st.each do |s|
-    puts s.name
+    puts "#{s.name}: #{s.grade.avg}"
+end
+st = st.sort_by{|s| [-s.grade.avg]}
+puts "List student after sort: "
+st.each do |s|
+    puts "#{s.name}: #{s.grade.avg}"
 end
