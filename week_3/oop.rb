@@ -93,3 +93,5 @@ puts "List student after sort: "
 st.each do |s|
     puts "#{s.name}: #{s.grade.avg}"
 end
+
+
