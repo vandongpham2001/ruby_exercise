@@ -21,7 +21,7 @@ class Document
     def initialize()
         print "Enter ID: "
         @id = gets
-        print "Enter nxb:"
+        print "Enter nxb: "
         @nxb = gets
         print "Enter number: "
         @number = gets.to_i
