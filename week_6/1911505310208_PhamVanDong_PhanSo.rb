@@ -1,3 +1,6 @@
+puts "Họ tên: Phạm Văn Đông"
+puts "Mã sinh viên: 1911505310208"
+
 class PhanSo
     attr_accessor :tuSo, :mauSo
     def initialize(tuSo, mauSo)
@@ -7,26 +10,31 @@ class PhanSo
     def to_s
         return "#{@tuSo}/#{@mauSo}"
     end
+
     def + (object)
         tuSo = @tuSo * object.mauSo + object.tuSo*@mauSo
         # tuSo = self.tuSo * a2.mauSo + a2.tuSo*self.mauSo
         mauSo = @mauSo * object.mauSo
-        return PhanSo.new(tuSo, mauSo)
+        ps = PhanSo.new(tuSo, mauSo)
+        return RutGon(ps)
     end
     def - (object)
         tuSo = @tuSo * object.mauSo - object.tuSo*@mauSo
         mauSo = @mauSo * object.mauSo
-        return PhanSo.new(tuSo, mauSo)
+        ps = PhanSo.new(tuSo, mauSo)
+        return RutGon(ps)
     end
     def * (object)
         tuSo = @tuSo * object.tuSo
         mauSo = @mauSo * object.mauSo
-        return PhanSo.new(tuSo, mauSo)
+        ps = PhanSo.new(tuSo, mauSo)
+        return RutGon(ps)
     end
     def / (object)
         tuSo = @tuSo * object.mauSo
         mauSo = @mauSo * object.tuSo
-        return PhanSo.new(tuSo, mauSo)
+        ps = PhanSo.new(tuSo, mauSo)
+        return RutGon(ps)
     end
 
 end
@@ -111,7 +119,7 @@ puts "Cong: #{p1 + p2}"
 puts "Tru: #{p1 - p2}"
 puts "Nhan: #{p1 * p2}"
 puts "Chia: #{p1 / p2}"
-puts "Tinh toan 2 phan so: #{p1} and #{p2}"
+puts "KHONG OVERLOADING - Tinh toan 2 phan so: #{p1} and #{p2}"
 puts cong
 puts tru
 puts nhan
