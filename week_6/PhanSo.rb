@@ -117,5 +117,5 @@ puts tru
 puts nhan
 puts chia
 
-puts UCLN(0, 4)
+# puts UCLN(0, 4)
 
