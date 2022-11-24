@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sach208 %>
+
+<div>
+  <%= link_to "Chinh sua sach", edit_sach_path(@sach208) %> |
+  <%= link_to "Danh sach sach", saches_path %>
+
+  <%= button_to "Xoa sach", @sach208, method: :delete %>
+</div>

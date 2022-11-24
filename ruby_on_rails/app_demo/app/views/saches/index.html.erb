@@ -1,0 +1,60 @@
+<div class="px-4">
+        <div class="d-flex justify-conten-start">
+          <h1 class="text-success fs-4 d-flex flex-column align-items-center margin-left: 100px">
+            <span>THƯ VIỆN</span> TRƯỜNG TIỂU HỌC PHONG THẠNH TÂY A
+          </h1>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <h2 class="text-warning">QUẢN LÝ CHO HỌC SINH MƯỢN SÁCH</h2>
+          <div class="d-flex align-items-center">
+            <p class="text-primary">Quy định ngày quá hạn</p>
+            <p class="ms-2 p-3 border border-success">3</p>
+          </div>
+        </div>
+      </div>
+
+<table class="table table-striped table-bordered table-hover">
+<thead class="thead-dark">
+  <tr>
+    <th>STT</th>
+    <th>Ma HS</th>
+    <th>Ho va ten</th>
+    <th>Lop</th>
+    <th>Ma sach</th>
+    <th>Ten sach</th>
+    <th>Ten tac gia</th>
+    <th>Tu sach</th>
+    <th>So BM</th>
+    <th>Ngay muon</th>
+    <th>Ngay tra</th>
+    <th>So ngay</th>
+    <th>Ghi chu</th>
+    <th>Thao tac</th>
+  </tr>
+  </thead>
+  <tbody>
+<% for sach in @saches208 %>
+  <tr>
+    <td><%=h sach.stt %></td>
+    <td><%=h sach.ma_hs %></td>
+    <td><%=h sach.ho_va_ten %></td>
+    <td><%=h sach.lop %></td>
+    <td><%=h sach.ma_sach %></td>
+    <td><%=h sach.ten_sach %></td>
+    <td><%=h sach.ten_tac_gia %></td>
+    <td><%=h sach.tu_sach %></td>
+    <td><%=h sach.so_bm %></td>
+    <td><%=h sach.ngay_muon %></td>
+    <td><%=h sach.ngay_tra %></td>
+    <td><%=h sach.so_ngay %></td>
+    <td><%=h sach.ghi_chu %></td>
+    <td><%= link_to 'Xem', sach %>
+    |<%= link_to 'Sua', edit_sach_path(sach) %>
+    |<%= link_to 'Xoa', sach, :confirm => 'Are you sure?',
+            :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to 'Them sach', new_sach_path(sach) %>
